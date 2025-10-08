@@ -8,18 +8,18 @@ def run_command(command):
         print(f"Command failed: {' '.join(command)}\nError: {e}")
         sys.exit(1)
 
-# Uninstall the 'openai' package
-print("Uninstalling 'openai'...")
-run_command([sys.executable, "-m", "pip", "uninstall", "-y", "openai"])
+# Uninstall the 'claude' package
+print("Uninstalling 'claude'...")
+run_command([sys.executable, "-m", "pip", "uninstall", "-y", "claude"])
 
-# Install the specific version of 'openai'
-print("Installing 'openai' version 1.57.1...")
-run_command([sys.executable, "-m", "pip", "install", "--force-reinstall", "openai==1.57.1"])
+# Install the specific version of 'claude'
+print("Installing 'claude' version 1.57.1...")
+run_command([sys.executable, "-m", "pip", "install", "--force-reinstall", "claude==1.57.1"])
 
 # Verify the installation
 try:
-    import openai
-    print(f"'openai' version {openai.__version__} is installed.")
+    import claude
+    print(f"'claude' version {claude.__version__} is installed.")
 except ImportError:
-    print("Failed to import the 'openai' library after installation.")
+    print("Failed to import the 'claude' library after installation.")
     sys.exit(1)
